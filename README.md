@@ -10,8 +10,8 @@ To open an interactive GUI to test and visualize the surrogate model results, ru
 To perform a quick test with the FEM model using OpenSeesPy, run the file "RunValidationExample.py"
 
 # About
-Development: Ph.D. Candidate German Solorzano
+Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)
 
-Supervision: Dr. Vagelis Plevris
+Supervision: Dr. Vagelis Plevris (vplevris@gmail.com)
 
 Sponsored:  Oslo Metropolitan University, Oslo, Norway, Department of Civil Engineering and Energy Technology 
