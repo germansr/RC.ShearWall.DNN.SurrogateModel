@@ -14,4 +14,4 @@ Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)
 
 Supervision: Dr. Vagelis Plevris (vplevris@gmail.com)
 
-Sponsored:  Oslo Metropolitan University, Oslo, Norway, Department of Civil Engineering and Energy Technology 
+Sponsored:  Oslo Metropolitan University (OsloMet), Department of Civil Engineering and Energy Technology, Oslo, Norway.
