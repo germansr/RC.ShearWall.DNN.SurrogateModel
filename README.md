@@ -12,6 +12,7 @@ To perform a quick test with the FEM model using OpenSeesPy, run the file "RunVa
 # About
 Developmed by:
 -Ph.D. Candidate German Solorzano
+
 Supervised by:
 -Dr. Vagelis Plevris
 
