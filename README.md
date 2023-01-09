@@ -1,2 +1,2 @@
 # RC.ShearWall.SurrogateModel
-Open source project for modeling RC Shear Walls using DNN Surrogate Models using OpenSees + TensorFlow
+An Open source project for modeling RC Shear Walls using Deep Neural Network (DNN) Surrogate Models with OpenSees + TensorFlow
