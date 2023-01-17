@@ -240,7 +240,7 @@ def colorMapVarious(ops,nv,nh,fileStrain,fileDisp,comp,scale=100, title=""):
             avg = getNodalAverage(ops,nv,nh,fileStrain,comp,index)
             dispRow = dataDisp[:,index]
             
-            skip = 2
+            skip = 6
             nNodes = (nv+1)*(nh+1)
             nodeDisp = np.zeros((nNodes,skip))
             for t in range(nNodes):
@@ -327,7 +327,7 @@ def colorMapOne(ops,nv,nh,axes,fileStrain,fileDisp,comp,station,scale=100, title
     avg = getNodalAverage(ops,nv,nh,fileStrain,comp,index)
     dispRow = dataDisp[:,index]
     
-    skip = 2
+    skip = 6
     nNodes = (nv+1)*(nh+1)
     nodeDisp = np.zeros((nNodes,skip))
     for t in range(nNodes):
