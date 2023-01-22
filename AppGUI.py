@@ -750,12 +750,12 @@ var_AxialLoad = myVariable("Axial Load", minValues[7], maxValues[7], unitString=
 
 # out all the input variables into a list
 variables = []
-variables.append(var_thickness)
-variables.append(var_length)
-variables.append(var_Height)
-variables.append(var_BElength)
 variables.append(var_CompStrength)
 variables.append(var_YieldStrength)
+variables.append(var_Height)
+variables.append(var_thickness)
+variables.append(var_length)
+variables.append(var_BElength)
 variables.append(var_BElongReinf)
 variables.append(var_BEtransvReinf)
 variables.append(var_WEBlongReinf)
@@ -850,6 +850,10 @@ addTextToConsole("")
 text_box.config(state="disabled")
 
 root.mainloop()
+
+
+
+
 
 
 
