@@ -10,7 +10,7 @@ To perform a quick test with the FEM model using OpenSeesPy, run the file "RunVa
 **2- Run FEM simulations to create the database**\
 Open the file "CreateDataBase_Loop.py", select the number of simulations to run by changing the corresponding variable, and run the file. (important to be consistent with the file name of all the analysis results that are used in the following step)
 
-**3- Data curation and prepare the training database**\
+**3- Data curation and preparation of the training database**\
 Follow the instructions in the file "DiscretizeCurvesAndCreateDatabase.py" (important to be consistent with the file name of the created training and testing databases that are used in the following step)
 
 **4- Train the ANN surrogate model**\
