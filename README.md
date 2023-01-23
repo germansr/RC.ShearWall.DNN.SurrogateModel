@@ -4,7 +4,7 @@ A data-driven surrogate model for analyzing RC shear walls is developed using De
 # Main Instructions 
 Most files are extensively commented and easy to adapt/modify. The workflow is explained as follows:
 
-**1- Quick Test of the FEM model using OpenSeesPy** \n
+**1- Quick Test of the FEM model using OpenSeesPy** \
 To perform a quick test with the FEM model using OpenSeesPy, run the file "RunValidationExample.py"
 
 2- Run FEM simulations to create the database
