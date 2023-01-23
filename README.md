@@ -4,16 +4,16 @@ A data-driven surrogate model for analyzing RC shear walls is developed using De
 # Main Instructions 
 Most files are extensively commented and easy to adapt/modify. The workflow is explained as follows:
 
-# 1- Quick Test of the FEM model using OpenSeesPy
+1- Quick Test of the FEM model using OpenSeesPy
 To perform a quick test with the FEM model using OpenSeesPy, run the file "RunValidationExample.py"
 
-# 2- Run FEM simulations to create the database
+2- Run FEM simulations to create the database
 Open the file "CreateDataBase_Loop.py", select the number of simulations to run by changing the corresponding variable, and run the file. (important to be consistent with the file name of all the analysis results that are used in the following step)
 
-# 3- Data curation and prepare the training database
+3- Data curation and prepare the training database
 Follow the instructions in the file "DiscretizeCurvesAndCreateDatabase.py" (important to be consistent with the file name of the created training and testing databases that are used in the following step)
 
-# 4- Train the ANN surrogate model
+4- Train the ANN surrogate model
 Run the file "MainNN.py". Follow the instructions and comments in the file to change the ANN structure if neccesary. (important to be consistent with the file name for the serialization of the ANN model which is used by the GUI application)
 
 
