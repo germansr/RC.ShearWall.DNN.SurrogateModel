@@ -32,18 +32,13 @@ To train the ANN surrogate model, run the file "MainNN.py". Follow the instructi
 To open the GUI application, run the file "AppGUI.py". The app loads the pre-trained ANN on opening and performs real-time predictions based on the slider values. Use the sliders to modify the input variables. To test the surrogate model againts the FEM analysis, run the analysis with the button "run FEM analysis". The analysis is performed in the background. After the analysis is completed, the results are shown in the top-right plot area where they can be compared with the surrogate model predictions. 
 
 **5- Misc**\
--The file "InputVariableBounds.py" controls the bounds of the input variables\
--The file "ShearWallParametrizedAsFunction.py" ccontains the main function to run the FEM model based on the 11 input values and some other input data\
--The file "Normalization.py" is a helper class to easily normalize and denormalize data\
--The files "ColorMapFEM.py" and "MyPlottingFEM.py" are various script for visualizatio purposes. 
--The files "DataUtils" and "NeuralNetwork" contain
+-The file "InputVariableBounds.py" controls the bounds of the input variables
+-The file "ShearWallParametrizedAsFunction.py" ccontains the main function to run the FEM model based on the 11 input values and some other input data
+-The file "Normalization.py" is a helper class to easily normalize and denormalize data
+-The files "ColorMapFEM.py" and "MyPlottingFEM.py" are various script for visualizatio purposes
+-The files "DataUtils" contains functions to check the performance of the ANN model
 
 # About
-This is the source code corresponding to the following publication:\
-
-AN OPEN-SOURCE FRAMEWORK FOR MODELING RC
-SHEAR WALLS USING DEEP NEURAL NETWORK
-
-Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)\
+Development: Ph.D. Candidate German Solorzano (germanso@oslomet.no, sr.german90@gmail.com)\
 Supervision: Dr. Vagelis Plevris (vplevris@gmail.com)\
-Sponsored:  Oslo Metropolitan University (OsloMet), Department of Civil Engineering and Energy Technology, Oslo, Norway.\
+Sponsored:  Oslo Metropolitan University (OsloMet), Department of Civil Engineering and Energy Technology, Oslo, Norway
