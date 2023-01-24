@@ -1,3 +1,5 @@
+![alt text](https://mega.nz/file/LoYCyTRA#STrxNthMTYvwLeZI8Ai9qOo-0XPe7YCbOus-FCmiE1g) 
+
 # Abstract
 A data-driven surrogate model for analyzing RC shear walls is developed using Deep Neural Networks (DNN). The surrogate model is trained with thousands of FEM simulations to predict the characteristic curve obtained when a static non-linear pushover analysis is performed. The surrogate model is extensively tested and found to exhibit a high degree of accuracy in its predictions while being extremely faster than the FEM analysis. In addition to the presented methodology, the complete code and framework that made this study possible is provided as an open-source project with the intention to bridge the gap between research and practical application of Machine Learning powered techniques in Structural Engineering. The project is developed on Python and includes a parametric FEM model of an RC shear wall in OpenSeesPy, the training and validation of the DNN model in TensorFlow, and an application with an interactive Graphical User Interface to test the methodology and visualize the results. 
 
@@ -27,11 +29,11 @@ Run the file "MainNN.py". Follow the instructions and comments in the file to ch
 Run the file "AppGUI.py". Use the sliders to modify the input variables and watch how the pushover curve is updated isntantly. To test the surrogate model, run the analysis with the button "run FEM analysis". After the analysis is completed, the analytical results can be comprared with the surrogate model predictions.
 
 **5- Misc**\
--The file "InputVariableBounds.py" controls the bounds of the input variables
--The file "ShearWallParametrizedAsFunction.py" ccontains the main function to run the FEM model based on the 11 input values and some other input data.
--The file "Normalization.py" is a helper class to easily normalize and denormalize data
+-The file "InputVariableBounds.py" controls the bounds of the input variables\
+-The file "ShearWallParametrizedAsFunction.py" ccontains the main function to run the FEM model based on the 11 input values and some other input data\
+-The file "Normalization.py" is a helper class to easily normalize and denormalize data\
 
 # About
-Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)
+Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)\
 Supervision: Dr. Vagelis Plevris (vplevris@gmail.com)\
 Sponsored:  Oslo Metropolitan University (OsloMet), Department of Civil Engineering and Energy Technology, Oslo, Norway.\
