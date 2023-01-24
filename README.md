@@ -4,7 +4,7 @@ A data-driven surrogate model for analyzing RC shear walls is developed using De
 # Main Instructions 
 Most files are extensively commented and easy to adapt/modify. The intended workflow is as follows:
 
-**Preparation: install all the required libraries**\
+**Preparation: install all the required libraries**
 - OpenseesPy: https://pypi.org/project/openseespy/
 - TensorFlow: https://www.tensorflow.org/install
 - Numpy: https://numpy.org/install/
@@ -32,6 +32,6 @@ Run the file "AppGUI.py". Use the sliders to modify the input variables and watc
 -The file "Normalization.py" is a helper class to easily normalize and denormalize data
 
 # About
-Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)\
+Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)
 Supervision: Dr. Vagelis Plevris (vplevris@gmail.com)\
 Sponsored:  Oslo Metropolitan University (OsloMet), Department of Civil Engineering and Energy Technology, Oslo, Norway.\
