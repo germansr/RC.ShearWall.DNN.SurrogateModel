@@ -4,6 +4,13 @@ A data-driven surrogate model for analyzing RC shear walls is developed using De
 # Main Instructions 
 Most files are extensively commented and easy to adapt/modify. The intended workflow is as follows:
 
+**Preparation: install all the required libraries**\
+- OpenseesPy: https://pypi.org/project/openseespy/
+- TensorFlow: https://www.tensorflow.org/install
+- Numpy: https://numpy.org/install/
+- tkinter: https://docs.python.org/3/library/tkinter.html  (usually included in standard python distribution)
+- matplotlib:  https://matplotlib.org/stable/users/installing/index.html
+
 **1- Quick Test of the FEM model using OpenSeesPy**\
 To perform a quick test with the FEM model using OpenSeesPy, run the file "RunValidationExample.py"
 
@@ -17,7 +24,12 @@ Run the file "DiscretizeCurvesAndCreateDatabase.py". Follow the instructions and
 Run the file "MainNN.py". Follow the instructions and comments in the file to change the ANN structure if neccesary. (important to be consistent with the file name for the serialization of the ANN model which is used by the GUI application)
 
 **5- Test the methodology with the interactive GUI**\
-Run the file "AppGUI.py"
+Run the file "AppGUI.py". Use the sliders to modify the input variables and watch how the pushover curve is updated isntantly. To test the surrogate model, run the analysis with the button "run FEM analysis". After the analysis is completed, the analytical results can be comprared with the surrogate model predictions.
+
+**5- Misc**\
+-The file "InputVariableBounds.py" controls the bounds of the input variables
+-The file "ShearWallParametrizedAsFunction.py" ccontains the main function to run the FEM model based on the 11 input values and some other input data.
+-The file "Normalization.py" is a helper class to easily normalize and denormalize data
 
 # About
 Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)\
