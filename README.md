@@ -39,6 +39,6 @@ To open the GUI application, run the file "AppGUI.py". The app loads the pre-tra
 - The files "DataUtils" contains functions to check the performance of the ANN model
 
 # About
-Development: Ph.D. Candidate German Solorzano (germanso@oslomet.no, sr.german90@gmail.com)\
-Supervision: Dr. Vagelis Plevris (vplevris@gmail.com)\
-Sponsored:  Oslo Metropolitan University (OsloMet), Department of Civil Engineering and Energy Technology, Oslo, Norway
+**Development:** Ph.D. Candidate German Solorzano (sr.german90@gmail.com, https://www.linkedin.com/in/germansolorzano/)\
+**Supervision:** Dr. Vagelis Plevris (vplevris@gmail.com, http://www.vplevris.net/en/)\
+**Sponsored:**  Oslo Metropolitan University (OsloMet), Department of Civil Engineering and Energy Technology, Oslo, Norway
