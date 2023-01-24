@@ -31,7 +31,7 @@ To train the ANN surrogate model, run the file "MainNN.py". Follow the instructi
 **5- Test the methodology with the interactive GUI**\
 To open the GUI application, run the file "AppGUI.py". The app loads the pre-trained ANN on opening and performs real-time predictions based on the slider values. Use the sliders to modify the input variables. To test the surrogate model againts the FEM analysis, run the analysis with the button "run FEM analysis". The analysis is performed in the background. After the analysis is completed, the results are shown in the top-right plot area where they can be compared with the surrogate model predictions. 
 
-**5- Misc**
+**Misc**
 - The file "ShearWallParametrizedAsFunction.py" ccontains the main function to run the FEM model based on the 11 input values and some other input data
 - The file "InputVariableBounds.py" controls the bounds of the input variables
 - The file "Normalization.py" is a helper class to easily normalize and denormalize data
