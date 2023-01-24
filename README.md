@@ -8,19 +8,18 @@ Most files are extensively commented and easy to adapt/modify. The intended work
 To perform a quick test with the FEM model using OpenSeesPy, run the file "RunValidationExample.py"
 
 **2- Run FEM simulations to create the database**\
-Open the file "CreateDataBase_Loop.py", select the number of simulations to run by changing the corresponding variable, and run the file. (important to be consistent with the file name of all the analysis results that are used in the following step)
+Open the file "CreateDataBase_Loop.py", select the number of simulations to run by changing the corresponding variable, and run the file. This is an expensive step as each simulation takes around 40 seconds to complete. (important to be consistent with the file name of the analysis results that are used in the following step)
 
 **3- Data curation and preparation of the training database**\
-Follow the instructions in the file "DiscretizeCurvesAndCreateDatabase.py" (important to be consistent with the file name of the created training and testing databases that are used in the following step)
+Run the file "DiscretizeCurvesAndCreateDatabase.py". Follow the instructions and comments to make any changes. (important to be consistent with the file name of the created training and testing databases that are used in the following step)
 
 **4- Train the ANN surrogate model**\
 Run the file "MainNN.py". Follow the instructions and comments in the file to change the ANN structure if neccesary. (important to be consistent with the file name for the serialization of the ANN model which is used by the GUI application)
 
-
+**5- Test the methodology with the interactive GUI**\
+Run the file "AppGUI.py"
 
 # About
-Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)
-
-Supervision: Dr. Vagelis Plevris (vplevris@gmail.com)
-
-Sponsored:  Oslo Metropolitan University (OsloMet), Department of Civil Engineering and Energy Technology, Oslo, Norway.
+Development: Ph.D. Candidate German Solorzano (sr.german90@gmail.com)\
+Supervision: Dr. Vagelis Plevris (vplevris@gmail.com)\
+Sponsored:  Oslo Metropolitan University (OsloMet), Department of Civil Engineering and Energy Technology, Oslo, Norway.\
