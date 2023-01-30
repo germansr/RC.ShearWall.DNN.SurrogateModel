@@ -38,8 +38,6 @@ fy = 392e6
 paxial = 246000 / (0.85*20.7e6*t*lw)
 height=2.0
 
-# USE THE VALIDATION's EXAMPLE SPECIFIC MATERIAL INFORMATION.
-concreteModel = [20.7e6,2.07e6,-4.14e6,-0.002,-0.01,0.001,0.3]
 
 targetDisp = 0.020
 increment = 0.0001
@@ -62,15 +60,14 @@ plotPushOverResults = True
                       height,       
                       fc,
                       fy,
-                      12,
-                      3,
-                      15,
+                      8,
+                      2,
+                      10,
                       targetDisp,
                       increment,
                       performPushOver,
                       plotValidation,
                       plotDeformedGravity,
-                      plotPushOverResults,
-                      concMatParams=concreteModel)  
+                      plotPushOverResults)  
 
 
