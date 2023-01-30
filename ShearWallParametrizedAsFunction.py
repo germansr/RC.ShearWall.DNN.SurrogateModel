@@ -1,18 +1,14 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Project: 
 An Open-Source Framework for Modeling RC Shear Walls using Deep Neural Networks
-
 File:    
 ShearWallParametrizesAsFunction.py
-
 Date:    
 28.12.2022
-
 Developmed by:
 -Ph.D. Candidate German Solorzano
 Supervised by:
 -Dr. Vagelis Plevris
-
 Sponsored by:
 Oslo Metropolitan University, Oslo, Norway.
 Department of Civil Engineering and Energy Technology 
@@ -115,7 +111,6 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
             plotPushOverResults=False,
             progressBar=None,
             printProgression=True,
-            concMatParams=None,
             recordResults=False):
 
 
@@ -232,20 +227,8 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
     # shear retention factor is 0.3
     srf = 0.3
     
-    # if the mateirla paremters for the concrete are input, then use them
-    if concMatParams is not None:
-        ops.nDMaterial('PlaneStressUserMaterial',1,40,7, concMatParams[0], 
-                                                         concMatParams[1], 
-                                                         concMatParams[2], 
-                                                         concMatParams[3], 
-                                                         concMatParams[4], 
-                                                         concMatParams[5], 
-                                                         concMatParams[6])
-    
-    # if not, use the default based on the FC                                        
-    else:
-        ops.nDMaterial('PlaneStressUserMaterial',1,40,7, fc, ft, fcu, eco, ecu, etu, srf) # confined
-        ops.nDMaterial('PlaneStressUserMaterial',66,40,7, fc, ft, fcu, eco, ecu, etu, srf) # unconfined   
+    ops.nDMaterial('PlaneStressUserMaterial',1,40,7, fc, ft, fcu, eco, ecu, etu, srf) # confined
+    ops.nDMaterial('PlaneStressUserMaterial',66,40,7, fc, ft, fcu, eco, ecu, etu, srf) # unconfined   
         
     
     #figure, ax = plt.subplots(2, 3)
@@ -288,7 +271,7 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
     # this section is used for the Boundary Elements
     defineWallSecion_ratios_LongAndTransv(ops,            #openseesObj
                                           sectionID_BE,   #sectionID,
-                                          44, 10, 11,      #materialConc, #steelReinfLong(vert), #matSteelReinfTransv(horz)
+                                          44, 10, 11,      #materialConc (unconfined), #steelReinfLong(vert), #matSteelReinfTransv(horz)
                                           EB_length,      #length (of the special boundary element)
                                           wallHeight,     #height
                                           wallThick,      #thick
@@ -490,5 +473,3 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
         return [dataPush[0:finishedSteps,0], -dataPush[0:finishedSteps,1]], ops    
 
     return [0,0],[0,0],ops
-        
-   
