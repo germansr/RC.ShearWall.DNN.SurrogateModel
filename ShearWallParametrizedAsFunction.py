@@ -214,17 +214,21 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
     ops.load(midNode,  0, -Pforce,0.0,0.0,0.0,0.0)	# apply vertical load
 
 
-    # NON LINEAR CONCRETE MATERIAL MODEL             
+    # NON LINEAR CONCRETE MATERIAL MODEL            
     # the fracture strength ft is 10% of fc
     ft = 0.10*fc
     # the crushing strength fcu is 20% of fc
     fcu = -0.20*fc
     # the strain at maxium compressive strength eco is -0.002
     eco = -0.002
-    # the strain at the crushing strength ecu is -0.005
-    ecu = -0.005
+    # the strain at the crushing strength (confined)
+    ecu = -0.01
+    # the strain at the crushing strength (unconfined)
+    ecu_unc = -0.005
     # the ultimate tensile strain is etu is 0.001
     etu = 0.001
+    # the ultimate tensile strain (unconfined)
+    etu_unc = 0
     # shear retention factor is 0.3
     srf = 0.3
     
@@ -240,15 +244,17 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
     
     # if not, use the default based on the FC                                        
     else:
-        ops.nDMaterial('PlaneStressUserMaterial',1,40,7, fc, ft, fcu, eco, ecu, etu, srf)
-            
+        ops.nDMaterial('PlaneStressUserMaterial',1,40,7, fc, ft, fcu, eco, ecu, etu, srf) # confined
+        ops.nDMaterial('PlaneStressUserMaterial',66,40,7, fc, ft, fcu, eco, ecu, etu, srf) # unconfined   
         
     
     #figure, ax = plt.subplots(2, 3)
     
-    
     # out of plane behaviour incorporated to the plane stress material
     ops.nDMaterial('PlateFromPlaneStress',4,1,1.283e10)            
+    
+    # out of plane behaviour incorporated to the plane stress material (unconfined) 
+    ops.nDMaterial('PlateFromPlaneStress',44,66,1.283e10) 
     
     # NON LINEAR STEEL
     # elastic moduli for common reinforcement steel
@@ -282,7 +288,7 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
     # this section is used for the Boundary Elements
     defineWallSecion_ratios_LongAndTransv(ops,            #openseesObj
                                           sectionID_BE,   #sectionID,
-                                          4, 10, 11,      #materialConc, #steelReinfLong(vert), #matSteelReinfTransv(horz)
+                                          44, 10, 11,      #materialConc, #steelReinfLong(vert), #matSteelReinfTransv(horz)
                                           EB_length,      #length (of the special boundary element)
                                           wallHeight,     #height
                                           wallThick,      #thick
