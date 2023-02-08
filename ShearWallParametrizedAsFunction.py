@@ -49,12 +49,11 @@ def getRebarAreaMetersMetric(metricDiameter):
     return a
 
 # this function is used to create the MULTI-LAYERED-SHELL section 
-def defineWallSecion_ratios_LongAndTransv(ops,secID,mconc,mreinfV,mreinfH,length,height,thick,cover, ratioLong, ratioTransv):
+def defineWallSecion_ratios_LongAndTransv(ops,secID,matConc,mreinfV,mreinfH,length,height,thick,cover, ratioLong, ratioTransv):
     
     # wall properties
     t = thick
     r = cover
-    concMaterial = mconc
     reinfMaterialV = mreinfV
     reinfMaterialH = mreinfH
     
@@ -76,20 +75,20 @@ def defineWallSecion_ratios_LongAndTransv(ops,secID,mconc,mreinfV,mreinfH,length
     # each row, starting from the second, is a layer
     # each row contains the thickness value and the reference to the corresponding material model
     ops.section('LayeredShell',secID,14,
-                concMaterial,r,                      # conc cover top
+                matConc,r,                      # conc cover top
                 reinfMaterialV,layerThickV2,         # vertical Reinf layer top 1
                 reinfMaterialV,layerThickV2,         # vertical Reinf layer top 2
                 reinfMaterialH,layerThickH2,         # horizontal Reinf layer top 1
                 reinfMaterialH,layerThickH2,         # horizontal Reinf layer top 2   
-                concMaterial,conct,                  # cconcrete core layer 1
-                concMaterial,conct,                  # cconcrete core layer 2
-                concMaterial,conct,                  # cconcrete core layer 3
-                concMaterial,conct,                  # cconcrete core layer 4
+                matConc,conct,                       # cconcrete core layer 1
+                matConc,conct,                       # cconcrete core layer 2
+                matConc,conct,                       # cconcrete core layer 3
+                matConc,conct,                       # cconcrete core layer 4
                 reinfMaterialH,layerThickH2,         # horizontal Reinf layer bot 1
                 reinfMaterialH,layerThickH2,         # horizontal Reinf layer bot 2  
                 reinfMaterialV,layerThickV2,         # vertical Reinf layer bot 1
                 reinfMaterialV,layerThickV2,         # vertical Reinf layer bot 2
-                concMaterial,r)                      # conc cover bottom
+                matConc,r)                      # conc cover bottom
     
 # #####################################################################################################
 # GENERATION OF THE PARAMETRIC MODEL
@@ -216,28 +215,19 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
     fcu = -0.20*fc
     # the strain at maxium compressive strength eco is -0.002
     eco = -0.002
-    # the strain at the crushing strength (confined)
+    # the strain at the crushing strength
     ecu = -0.01
-    # the strain at the crushing strength (unconfined)
-    ecu_unc = -0.005
     # the ultimate tensile strain is etu is 0.001
     etu = 0.001
-    # the ultimate tensile strain (unconfined)
-    etu_unc = 0
     # shear retention factor is 0.3
     srf = 0.3
     
-    ops.nDMaterial('PlaneStressUserMaterial',1,40,7, fc, ft, fcu, eco, ecu, etu, srf) # confined
-    ops.nDMaterial('PlaneStressUserMaterial',66,40,7, fc, ft, fcu, eco, ecu, etu, srf) # unconfined   
+    ops.nDMaterial('PlaneStressUserMaterial',1,40,7, fc, ft, fcu, eco, ecu, etu, srf) 
         
-    
     #figure, ax = plt.subplots(2, 3)
-    
     # out of plane behaviour incorporated to the plane stress material
     ops.nDMaterial('PlateFromPlaneStress',4,1,1.283e10)            
     
-    # out of plane behaviour incorporated to the plane stress material (unconfined) 
-    ops.nDMaterial('PlateFromPlaneStress',44,66,1.283e10) 
     
     # NON LINEAR STEEL
     # elastic moduli for common reinforcement steel
@@ -259,7 +249,7 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
     # this section is used for the WEB
     defineWallSecion_ratios_LongAndTransv(ops,            #openseesObj,
                                           sectionID_web,  #sectionID,
-                                          4, 10, 11,      #materialConc, #steelReinfLong(vert), #matSteelReinfTransv(horz)
+                                          4, 10, 11,      #concID, #steelReinfLongID(vert), #steelReinfTransvID(horz)
                                           wallLength,     #length (of the wall)
                                           wallHeight,     #height
                                           wallThick,      #thick
@@ -271,7 +261,7 @@ def run(t,lw,plbe,pl,pt,webpl,webpt,paxial,wallHeight,compStrength,yieldStrength
     # this section is used for the Boundary Elements
     defineWallSecion_ratios_LongAndTransv(ops,            #openseesObj
                                           sectionID_BE,   #sectionID,
-                                          44, 10, 11,      #materialConc (unconfined), #steelReinfLong(vert), #matSteelReinfTransv(horz)
+                                          4, 10, 11,      #concID, #steelReinfLongID(vert), #steelReinfTransvID(horz)
                                           EB_length,      #length (of the special boundary element)
                                           wallHeight,     #height
                                           wallThick,      #thick
